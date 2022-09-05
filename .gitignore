@@ -5,3 +5,4 @@ server/dist
 server/node_modules
 .env
 coverage/
+node_modules
