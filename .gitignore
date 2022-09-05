@@ -1,5 +1,7 @@
 /node_modules
 /dist
 /logs
+server/dist
+server/node_modules
 .env
 coverage/
