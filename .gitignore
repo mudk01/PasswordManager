@@ -6,3 +6,5 @@ server/node_modules
 .env
 coverage/
 node_modules
+server/dist/index.js
+server/node_modules/.package-lock.json
