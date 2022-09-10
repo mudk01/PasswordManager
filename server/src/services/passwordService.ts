@@ -15,4 +15,12 @@ export const getPassword = async (userId: string) => {
       [userId]
     );
     return result.rows[0];
-  }
+}
+  
+export const getDecryptedPassword = async (userId: string, service: string) => {
+  const result = await passwordDbPool.query(
+    `SELECT password, iv FROM public.passwords WHERE id = $1 AND service = $2`,
+    [userId, service]
+  );
+  return result.rows[0];
+}

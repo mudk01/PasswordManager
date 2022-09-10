@@ -1,5 +1,5 @@
 import pg from 'pg';
-import passwordDb from '../config/db.config';
+import passwordDb from '../config/dbConfig';
 
 const { Pool, types } = pg;
 

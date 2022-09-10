@@ -12,7 +12,7 @@ const encrypt = (password: any) => {
     return {iv: iv.toString('hex'), password: encryptedPassword.toString('hex')};
 }
 
-const decrypt = (encryptedPassword: { iv: WithImplicitCoercion<string> | { [Symbol.toPrimitive](hint: "string"): string; }; password: WithImplicitCoercion<string> | { [Symbol.toPrimitive](hint: "string"): string; }; }) => {
+const decrypt = (encryptedPassword: any) => {
     const decipher = crypto.createDecipheriv('aes-256-ctr', Buffer.from(secret), Buffer.from(encryptedPassword.iv, 'hex'));
     const decryptedPassword = Buffer.concat([decipher.update(Buffer.from(encryptedPassword.password, 'hex')), decipher.final()]);
 

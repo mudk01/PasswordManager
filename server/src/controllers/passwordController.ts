@@ -17,5 +17,11 @@ export const getPassword = async (req: Request, res: Response, next: NextFunctio
     res.status(200).send(data);
 }
 
+export const sendDecryptedPassword = async (req: Request, res: Response, next: NextFunction) => {
+    const { userId, service } = req.query;
+    const data = await passwordService.getDecryptedPassword(userId as string, service as string);
+    const decryptedPassword = decrypt(data);
+    res.status(200).send(decryptedPassword);
+}
 
   
