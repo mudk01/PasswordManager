@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
 import passwordDbPool from '../db/passwordDb';
 
 export const addPassword = async (userId: string, userName: string, password: string, service: string, iv: string) => {
